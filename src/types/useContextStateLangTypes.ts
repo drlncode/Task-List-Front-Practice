@@ -1,6 +1,7 @@
 import { LangStructure } from './langObjectStructure';
+import { Lang } from './langTypes';
 
 export interface LangStateReturnedProperties {
     lang?: LangStructure;
-    changeLang?: () => void;
+    changeLang?: ({ newLang }: { newLang: Lang }) => void;
 }
