@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Lang } from '../../types/langTypes';
 import { LangStructure } from '../../types/langObjectStructure';
 
 export function useContextState() {
@@ -12,17 +13,10 @@ export function useContextState() {
         return { currentLang: 'es' }
     });
 
-    const changeLang = () => {
-        if (lang.currentLang === 'es') {
-            const newLang = structuredClone(lang);
-            newLang.currentLang = 'en';
-            setLang(newLang);
-            return;
-        }
-
-        const newLang = structuredClone(lang);
-        newLang.currentLang = 'es';
-        setLang(newLang);
+    const changeLang = ({ newLang }: { newLang: Lang }) => {
+        const langCopy = structuredClone(lang);
+        langCopy.currentLang = newLang;
+        setLang(langCopy);
     }
 
     return { lang, changeLang };
