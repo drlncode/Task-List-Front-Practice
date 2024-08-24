@@ -3,6 +3,63 @@
         "title": "Tasks List."
     },
     "main": {
-        
+        "createTasks": {
+            "title": "Create new task.",
+            "form": {
+                "inputs": {
+                    "firstInput": {
+                        "title": "Title.",
+                        "placeholder": "Buy movie tickets..."
+                    },
+                    "secondInput": {
+                        "title": "Description.",
+                        "placeholder": "Buy them online before they run out..."
+                    }
+                },
+                "buttons": {
+                    "firstButton": {
+                        "label": "Add"
+                    }
+                }
+            }
+        },
+        "manageTasks": {
+            "title": "All tasks.",
+            "options": {
+                "filter": {
+                    "title": "Tasks:",
+                    "select": {
+                        "firstOption": "Pending",
+                        "secondOption": "Completed",
+                        "thirdOption": "All"
+                    }
+                },
+                "cleanAll": {
+                    "label": "Clear all"
+                }
+            },
+            "noContent": {
+                "title": "You have no",
+                "states": {
+                    "slope": "pending tasks.",
+                    "complete": "completed tasks.",
+                    "all": "tasks."
+                }
+            },
+            "content": {
+                "status": {
+                    "slope": "Pending",
+                    "complete": "Completed"
+                },
+                "buttons": {
+                    "completedButton": {
+                        "label": "Completed"
+                    },
+                    "deleteButton": {
+                        "label": "Delete"
+                    }
+                }
+            }
+        }
     }
 }

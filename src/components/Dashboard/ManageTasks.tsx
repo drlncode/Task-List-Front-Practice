@@ -1,6 +1,7 @@
 import { ChangeEvent } from 'react';
 import { useTasksFilter } from '../../hooks/tasks/useTasksFilter.ts';
 import { useTasks } from '../../hooks/tasks/useTasks.ts';
+import { useLang } from '../../hooks/lang/useLang.ts';
 import { List } from '../Icons/Icons.tsx';
 import { Erased } from '../Icons/Icons.tsx';
 import Tasks from './Tasks/index.tsx';
@@ -8,6 +9,7 @@ import { Status } from '../../types/statusValueTypes.ts';
 
 export function ManageTasks() {
     const { clearAllTasks } = useTasks();
+    const { langText } = useLang();
 
     const {
         tasks,
@@ -33,19 +35,19 @@ export function ManageTasks() {
                     <div>
                         <List />
                     </div>
-                    <h2>Todas las tareas.</h2>
+                    <h2>{ langText.main?.manageTasks.title }</h2>
                 </div>
                 <div className='flex items-center mb-5 *:flex *:justify-center *:items-center'>
                     <div className=''>
-                        Tareas:
+                        { langText.main?.manageTasks.options.filter.title }
                         <select 
                             className='py-1 px-2 bg-zinc-800 ml-2 flex rounded-sm outline-none'
                             name='status' 
                             onChange={handleChange} 
                         >
-                            <option value='slope' >Pendientes</option>
-                            <option value='complete' >Completas</option>
-                            <option value='all'>Todas</option>
+                            <option value='slope' >{ langText.main?.manageTasks.options.filter.select.firstOption }</option>
+                            <option value='complete' >{ langText.main?.manageTasks.options.filter.select.secondOption }</option>
+                            <option value='all'>{ langText.main?.manageTasks.options.filter.select.thirdOption }</option>
                         </select>
                     </div>
                     <div className='ml-4 pl-3 border-l border-l-zinc-500' >
@@ -54,7 +56,7 @@ export function ManageTasks() {
                             onClick={handleClickDeleteAllTasks}
                         >
                             <Erased />
-                            <span>Borrar todo</span>
+                            <span>{ langText.main?.manageTasks.options.cleanAll.label }</span>
                         </button>
                     </div>
                 </div>

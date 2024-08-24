@@ -3,6 +3,63 @@
         "title": "Lista de tareas."
     },
     "main": {
-        
+        "createTasks": {
+            "title": "Crear nueva tarea.",
+            "form": {
+                "inputs": {
+                    "firstInput": {
+                        "title": "Titulo.",
+                        "placeholder": "Comprar entradas al cine..."
+                    },
+                    "secondInput": {
+                        "title": "Descripción.",
+                        "placeholder": "Comprarlas por internet antes de que se agoten..."
+                    }
+                },
+                "buttons": {
+                    "firstButton": {
+                        "label": "Agregar"
+                    }
+                }
+            }
+        },
+        "manageTasks": {
+            "title": "Todas las tareas.",
+            "options": {
+                "filter": {
+                    "title": "Tareas:",
+                    "select": {
+                        "firstOption": "Pendientes",
+                        "secondOption": "Completas",
+                        "thirdOption": "Todas"
+                    }
+                },
+                "cleanAll": {
+                    "label": "Borrar todo"
+                }
+            },
+            "noContent": {
+                "title": "No tienes tareas",
+                "states": {
+                    "slope": "pendientes.",
+                    "complete": "completadas.",
+                    "all": "actualmente."
+                }
+            },
+            "content": {
+                "status": {
+                    "slope": "Pendiente",
+                    "complete": "Completada"
+                },
+                "buttons": {
+                    "completedButton": {
+                        "label": "Completada"
+                    },
+                    "deleteButton": {
+                        "label": "Eliminar"
+                    }
+                }
+            }
+        }
     }
 }

@@ -1,9 +1,11 @@
 import { TaskStructure } from '../../../types/taskStructure.ts';
 import { CheckedBox, SquareCross } from '../../Icons/Icons.tsx';
 import { useTasks } from '../../../hooks/tasks/useTasks.ts';
+import { useLang } from '../../../hooks/lang/useLang.ts';
 
 export function Task({ task }: { task: TaskStructure }) {
     const { updateTaskState, deleteTask } = useTasks();
+    const { langText } = useLang();
 
     const handleClickUpdateState = () => {
         if (updateTaskState) {
@@ -21,8 +23,8 @@ export function Task({ task }: { task: TaskStructure }) {
     const status = task.status;
     
     const statusMessage = {
-        slope: 'Pendiente',
-        complete: 'Completado',
+        slope: langText.main?.manageTasks.content.status.slope,
+        complete: langText.main?.manageTasks.content.status.complete,
         all: ''
     };
     const statusColor = {
@@ -60,7 +62,7 @@ export function Task({ task }: { task: TaskStructure }) {
                         onClick={handleClickUpdateState}
                         className='bg-green-500 py-1.5 px-2 rounded hover:bg-green-400'
                     >
-                        <span>Completada</span>
+                        <span>{ langText.main?.manageTasks.content.buttons.completedButton.label }</span>
                         <CheckedBox />
                     </button>
                 )}
@@ -68,7 +70,7 @@ export function Task({ task }: { task: TaskStructure }) {
                     onClick={handleClikcDeleteTask}
                     className='py-1.5 px-2 hover:text-red-600 border border-transparent hover:border-red-600 rounded'
                 >
-                    <span>Eliminar</span>
+                    <span>{ langText.main?.manageTasks.content.buttons.deleteButton.label }</span>
                     <SquareCross />
                 </button>
             </div>
