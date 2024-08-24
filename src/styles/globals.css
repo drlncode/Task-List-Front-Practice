@@ -1,0 +1,10 @@
+@tailwind base;
+
+@layer base {
+    * {
+        color-scheme: light dark;
+    }
+}
+
+@tailwind components;
+@tailwind utilities;
