@@ -12,7 +12,7 @@ export function CreateTasks() {
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        if (taskTitle.current && taskDesc.current && setTask) {
+        if (taskTitle.current && taskTitle.current.value.length > 3 && taskDesc.current && setTask) {
             setTask({ 
                 taskTitle: taskTitle.current.value, 
                 taskDesc: taskDesc.current.value 
